@@ -36,7 +36,7 @@
 )
 
 #let kidmath(body) = {
-  show: it => text(font: "Pennstander Math", weight: "thin", it)
+  show: it => text(font: "Pennstander Math", weight: 200, it)
   $body$
 }
 
@@ -54,7 +54,7 @@
 #set heading(numbering: "1.")
 #show heading: set text(font: "Inter 18pt", weight: "semibold", size: 14pt) 
 #show heading.where(level: 1): it => block(width:70%, below: 10pt)[#counter(heading).display() #it.body]
-#show heading.where(level: 2): set text(size: 11pt)
+#show heading.where(level: 2): set text(size: 10pt)
 #show heading.where(level: 2): it => block() + [#counter(heading).display() ] + it.body +[.]
 #show heading.where(level: 3): set text(size: 10pt, weight: "regular")
 #show heading.where(level: 3): it => [#counter(heading).display() ] + it.body + [.]
@@ -74,8 +74,23 @@
 )
 #let corollary = thmplain(
   "corollary",
-  "Corollary",
+  "Следствие",
   base: "theorem",
+  titlefmt: strong
+)
+#let property = thmplain(
+  "theorem", 
+  "Свойство", 
+  titlefmt: strong
+)
+#let lemma = thmplain(
+  "theorem",
+  "Лемма",
+  titlefmt: strong,
+)
+#let proposition = thmplain(
+  "theorem",
+  "Утверждение",
   titlefmt: strong
 )
 #let definition = thmplain(
@@ -89,7 +104,7 @@
 ).with(numbering: none)
 #let remark = thmplain(
   "remark",
-  "Замечение",
+  "Замечание",
 ).with(numbering: none)
 #let proof = thmproof(
   "proof", 
@@ -168,5 +183,10 @@
 == Граничный оператор
 == Цепной комплекс
 === Циклы и границы
-== Связь $H_1(X, ZZ)$ и $pi_1(X, ZZ)$. 
+== Связь $H_1(X, ZZ)$ и $pi_1(X, p t)$ 
+#definition[Коммутатор][Для любых двух элементов группы $a, b in G$ определен _коммутатор_ $ [a, b] = a^(-1)b^(-1)a b. $]
+#definition[Коммутант][Подгруппа $[G, G] subset (G, star) $, порожденная коммутаторами всех элементов, называется _коммутантом_ группы, т.е. $ [G, G] = ({a^(-1) b^(-1)a b |a, b in G}, star). $]
+#property[Коммутант является нормальной подгруппой.]
+#definition[Абелеанизация][Факторгруппа $G^(a b) colon.eq G slash [G, G]$ называется _абелеанизацией_ группы. Соответствующий гомоморфизм обычно обозначается $"ab" : G ->> G^(a b)$.]
+#theorem[Гуревич][В линейно-связном пространстве $X$ существует изоморфизм фундаментальной группы и первой гомологической группой: $ "ab"(pi_1(X, p t)) tilde.eq H_1(X, ZZ). $]
 == Числа Бетти
