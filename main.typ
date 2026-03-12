@@ -42,6 +42,9 @@
   spacing: 12pt,
 )
 
+#show title: set text(size: 24pt, weight: "semibold", font: "Roboto")
+
+
 #title[Есть ли дырка?]
 #outline()
 
@@ -52,7 +55,7 @@
   #set text(                    // base for all
     size: 13pt, 
     weight: "semibold", 
-    font: "Inter 18pt"
+    font: "Roboto",
     )
   #if it.level == 1 [           // for level 1
     #block(width: 80%, below: 10pt)[#counter(heading).display() #it.body]

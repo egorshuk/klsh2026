@@ -35,7 +35,7 @@
 #set text(
   lang: "ru",
   size: 18pt,
-  font: "Inter 18pt",
+  font: "Roboto",
   weight: "regular",
 )
 
