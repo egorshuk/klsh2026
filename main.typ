@@ -2,6 +2,11 @@
 #import "@preview/hydra:0.6.2": hydra
 #show: thmrules
 
+#let title-font = "NauryzRedKeds"
+#let headings-font = "Roboto"
+#let main-font = "PT Serif"
+#let math-font = "Cambria Math"
+#let funny-font = "Pennstander Math"
 
 #set page(
   paper: "a5",
@@ -30,10 +35,11 @@
 #set text(
   lang: "ru",
   size: 10pt,
-  font: "PT Serif", 
+  font: main-font, 
 )
 
 #show footnote: set text(red, weight: "semibold")
+#show math.equation: set text(font: math-font)
 
 #set par(
   first-line-indent: 1.2em,
@@ -42,10 +48,21 @@
   spacing: 12pt,
 )
 
-#show title: set text(size: 24pt, weight: "semibold", font: "Roboto")
+#show title: set text(
+  size: 24pt, 
+  weight: "black", 
+  font: title-font 
+)
 
 
-#title[Есть ли дырка?]
+#title[название]
+
+#show heading: set text(
+  size: 13pt, 
+  weight: "medium", 
+  font: headings-font,
+)
+
 #outline()
 
 
@@ -54,8 +71,8 @@
 #show heading: it => [
   #set text(                    // base for all
     size: 13pt, 
-    weight: "semibold", 
-    font: "Roboto",
+    weight: "medium", 
+    font: headings-font,
     )
   #if it.level == 1 [           // for level 1
     #block(width: 80%, below: 10pt)[#counter(heading).display() #it.body]
@@ -69,7 +86,7 @@
 ]
 
 #let kidmath(body) = {
-  show: it => text(font: "Pennstander Math", weight: 200, it)
+  show: it => text(font: funny-font, weight: 200, it)
   $body$
 }
 
