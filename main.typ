@@ -6,7 +6,6 @@
 #let headings-font = "Roboto"
 #let main-font = "PT Serif"
 #let math-font = "Cambria Math"
-#let funny-font = "Pennstander Math"
 
 #set page(
   paper: "a5",
@@ -39,7 +38,6 @@
 )
 
 #show footnote: set text(red, weight: "semibold")
-#show math.equation: set text(font: math-font)
 
 #set par(
   first-line-indent: 1.2em,
