@@ -10,9 +10,9 @@
 #set page(
   paper: "a5",
   margin: (
-    inside: 17mm,
-    outside: 12mm,
-    top: 17mm,
+    inside: 12mm,
+    outside: 8mm,
+    top: 18mm,
     bottom: 7mm
   ),
   header: context {
